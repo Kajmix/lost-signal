@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bifv3786bpdy0"]
+
+[ext_resource type="Script" uid="uid://catk81jsscyxi" path="res://scripts/player_logic.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://bcyspbfe0i2ta" path="res://assets/sprites/player_sprite_beta.png" id="2_g2els"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vyb7"]
+radius = 1.0365647
+height = 3.5539362
+
+[node name="Player" type="CharacterBody2D" unique_id=1524441291]
+script = ExtResource("1_3vyb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=436009301]
+texture = ExtResource("2_g2els")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1539968685]
+scale = Vector2(6.7530756, 6.7530756)
+shape = SubResource("CapsuleShape2D_3vyb7")
