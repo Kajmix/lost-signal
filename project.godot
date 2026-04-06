@@ -13,6 +13,7 @@ config_version=5
 config/name="Lost Signal"
 run/main_scene="uid://mrsvwyo6evyu"
 config/features=PackedStringArray("4.6", "Mobile")
+run/max_fps=300
 
 [autoload]
 
@@ -29,6 +30,10 @@ window/stretch/aspect="expand"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
+[global_group]
+
+Player="PlayerNode"
 
 [input]
 

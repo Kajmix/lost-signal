@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://kmkfmqxbyo0s"]
+
+[ext_resource type="Script" uid="uid://b53m67mn7q8d7" path="res://scripts/base_logic.gd" id="1_baglu"]
+[ext_resource type="Texture2D" uid="uid://cewjwsgbyr24p" path="res://assets/sprites/base.png" id="1_pvqg0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pvqg0"]
+radius = 19.026299
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_baglu"]
+radius = 26.0
+
+[node name="Base" type="StaticBody2D" unique_id=1728611137]
+script = ExtResource("1_baglu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1260230777]
+texture = ExtResource("1_pvqg0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=745962247]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_pvqg0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1434809028]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=531538810]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_baglu")
+debug_color = Color(0.6494422, 0.33006155, 1, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_inside_back_area"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_outside_back_area"]

@@ -1,11 +1,10 @@
 extends CharacterBody2D
 
 @onready var player_sprite : AnimatedSprite2D = $AnimatedSprite2D
-
 @export var player_speed = 100
+var animation = "down"
 
 func _physics_process(delta: float) -> void:
-	var animation = "down"
 	var dir = Input.get_vector("left", "right", "up", "down")
 	if Input.is_action_pressed("left"):
 		animation = "left"

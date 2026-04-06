@@ -9,19 +9,19 @@ height = 3.5539362
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("2_g2els")
-region = Rect2(0, 0, 16, 24)
+region = Rect2(0, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
-region = Rect2(32, 0, 16, 24)
+region = Rect2(32, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("2_g2els")
-region = Rect2(16, 0, 16, 24)
+region = Rect2(16, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
 atlas = ExtResource("2_g2els")
-region = Rect2(48, 0, 16, 24)
+region = Rect2(48, 0, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qhqgy"]
 animations = [{
@@ -58,7 +58,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=1524441291]
+[node name="Player" type="CharacterBody2D" unique_id=1524441291 groups=["Player"]]
 script = ExtResource("1_3vyb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1539968685]
@@ -66,5 +66,6 @@ scale = Vector2(6.7530756, 6.7530756)
 shape = SubResource("CapsuleShape2D_3vyb7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=554664144]
+position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_qhqgy")
-animation = &"up"
+animation = &"down"
