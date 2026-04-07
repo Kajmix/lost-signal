@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dlwnmj31e0gb0" path="res://assets/sprites/crystals.png" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://dgqot7mkwllgu" path="res://scenes/water.res" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bifv3786bpdy0" path="res://scenes/player.tscn" id="3_sugp2"]
+[ext_resource type="Texture2D" uid="uid://caaap75ib3vv1" path="res://assets/sprites/spruce.png" id="6_tefeu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jyhfs"]
 texture = ExtResource("2_sugp2")
@@ -19,11 +20,14 @@ texture = ExtResource("2_sugp2")
 [sub_resource type="TileSet" id="TileSet_tbgi4"]
 sources/0 = SubResource("TileSetAtlasSource_jyhfs")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o6xl0"]
+radius = 9.0
+height = 22.0
+
 [node name="Main" type="Node2D" unique_id=1831380165]
 
 [node name="tilemap_layers" type="Node" parent="." unique_id=771674233]
 script = ExtResource("1_jyhfs")
-r = null
 
 [node name="obsticles" type="TileMapLayer" parent="tilemap_layers" unique_id=1867951835]
 tile_set = SubResource("TileSet_tbgi4")
@@ -32,8 +36,51 @@ tile_set = SubResource("TileSet_tbgi4")
 z_index = -6
 
 [node name="background" parent="tilemap_layers" unique_id=1377430675 instance=ExtResource("2_jyhfs")]
+position = Vector2(0, 0)
 
 [node name="Player" parent="." unique_id=1524441291 instance=ExtResource("3_sugp2")]
 z_index = 6
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=91133752]
+
+[node name="Node" type="Node" parent="." unique_id=245015782]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node" unique_id=459733799]
+position = Vector2(59, -60)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node/StaticBody2D" unique_id=1394534746]
+texture = ExtResource("6_tefeu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/StaticBody2D" unique_id=584007543]
+position = Vector2(0, 28)
+shape = SubResource("CapsuleShape2D_o6xl0")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node" unique_id=77283514]
+position = Vector2(-99, 27)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node/StaticBody2D2" unique_id=740856586]
+texture = ExtResource("6_tefeu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/StaticBody2D2" unique_id=820915077]
+position = Vector2(0, 28)
+shape = SubResource("CapsuleShape2D_o6xl0")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Node" unique_id=1431924313]
+position = Vector2(-91, -62)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node/StaticBody2D3" unique_id=1106035070]
+texture = ExtResource("6_tefeu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/StaticBody2D3" unique_id=1338652266]
+position = Vector2(0, 28)
+shape = SubResource("CapsuleShape2D_o6xl0")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Node" unique_id=1728851672]
+position = Vector2(62, 34)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node/StaticBody2D4" unique_id=1561623083]
+texture = ExtResource("6_tefeu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/StaticBody2D4" unique_id=973035532]
+position = Vector2(0, 28)
+shape = SubResource("CapsuleShape2D_o6xl0")

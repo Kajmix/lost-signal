@@ -5,7 +5,7 @@ func _ready() -> void:
 	for y in range(-r, r+1):
 		for x in range(-r, r+1):
 			if x*x + y*y <= r*r:
-				if randi_range(0,10) == 1:
+				if randi_range(0,60) == 1:
 					obsticles_tilemap.set_cell(
 						Vector2i(x, y),
 						0,
